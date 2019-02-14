@@ -20,8 +20,8 @@ var config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: _({}).chain()
-    .extend(require("../helpers/caps").ios81)
-    .extend({'browserName': 'safari'})
+    .extend(require("../helpers/caps").android18)
+    .extend({'browserName': 'chrome'})
     .omit('app').value(),
   // Spec patterns are relative to the current working directly when
   // protractor is called.

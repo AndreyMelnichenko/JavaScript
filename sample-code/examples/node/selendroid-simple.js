@@ -12,17 +12,12 @@ describe("selendroid simple", function () {
   var allPassed = true;
 
   before(function () {
-    var serverConfig = process.env.npm_package_config_sauce ?
-      serverConfigs.sauce : serverConfigs.local;
+    var serverConfig = serverConfigs.local;
     driver = wd.promiseChainRemote(serverConfig);
     require("./helpers/logging").configure(driver);
 
     var desired = _.clone(require("./helpers/caps").selendroid16);
     desired.app = require("./helpers/apps").androidApiDemos;
-    if (process.env.npm_package_config_sauce) {
-      desired.name = 'selendroid - simple';
-      desired.tags = ['sample'];
-    }
     return driver
       .init(desired)
       .setImplicitWaitTimeout(3000);
@@ -30,12 +25,7 @@ describe("selendroid simple", function () {
 
   after(function () {
     return driver
-      .quit()
-      .finally(function () {
-        if (process.env.npm_package_config_sauce) {
-          return driver.sauceJobStatus(allPassed);
-        }
-      });
+      .quit();
   });
 
   afterEach(function () {
@@ -44,8 +34,10 @@ describe("selendroid simple", function () {
 
   it("should find elements", function () {
     return driver
-      .waitForElementByName('Animation')
+	    .waitForElementByXPath("//*[@text='Animation']")
+      //.waitForElementByName('Animation')
         .text().should.become('Animation')
+	    .sleep(5000)
       .elementByClassName('android.widget.TextView')
         .text().should.eventually.match(/Accessibility|API Demos/)
       .elementByName('App').click()

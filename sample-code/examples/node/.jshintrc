@@ -2,7 +2,7 @@
   "laxcomma": true,
   "strict": true,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "trailing": true,
   "node": true,
   "eqeqeq": true,

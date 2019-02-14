@@ -18,28 +18,28 @@ exports.ios81 = {
 
 exports.android18 = {
   browserName: '',
-  'appium-version': '1.6',
+  'appium-version': '1.9',
   platformName: 'Android',
-  platformVersion: '5.1',
+  platformVersion: '7.1',
   deviceName: 'Android Emulator',
   app: undefined // will be set later
 };
 
 exports.android19 = {
   browserName: '',
-  'appium-version': '1.6',
+  'appium-version': '1.9',
   platformName: 'Android',
-  platformVersion: '5.1',
+  platformVersion: '7.1',
   deviceName: 'Android Emulator',
   app: undefined // will be set later
 };
 
 exports.selendroid16 = {
   browserName: '',
-  'appium-version': '1.6',
+  'appium-version': '1.9',
   platformName: 'Android',
-  platformVersion: '5.1',
-  automationName: 'selendroid',
+  platformVersion: '7.1',
+  //automationName: 'selendroid',
   deviceName: 'Android Emulator',
   app: undefined // will be set later
 };
