@@ -25,7 +25,6 @@ describe("android webview", function () {
 	    .sleep(5000)
 	    .contexts()
 	    .then(function (ctxs) {
-		    console.log(ctxs);
 		    return driver.context(ctxs[ctxs.length - 1]);
 	    });
   });
@@ -43,16 +42,13 @@ describe("android webview", function () {
   });
 
   it("should switch to webview and get context", function () {
-		return driver.source().then(function (source) {
-				//console.log(source);
-			})
+		return driver
 			.sleep(1000)
 			.elementByXPath("//*[@placeholder='mysite.bpmonline.com']")
 			.sendKeys('Andrey')
 			.sleep(1000)
 			.contexts()
 			.then(function (ctxs) {
-				console.log(ctxs);
 				return driver.context(ctxs[ctxs.length - 2]);
 			})
 			.getWindowSize()
@@ -63,30 +59,13 @@ describe("android webview", function () {
 				action.tap({x:x, y:y});
 				return driver.performTouchAction(action);
 			})
-			// .performTouchAction().then(function (touchAction) {
-
-			// 		//console.log(y, " => ", x);
-			// 		action.moveTo({x:x, y:y})
-			// 		.press({x:x, y:y})
-			// 		.release();
-			// 		//return
-			// 		action.perform();
-			// })
-
-			// 	var action = new wd.TouchAction(driver);
-			// 	//console.log(y, " => ", x);
-			// 	action.moveTo({x:x, y:y})
-			// 	.press({x:x, y:y})
-			// 	.release();
-			// 	//return
-			// 	action.perform();
-			// })
-			// .elementById("#LoginPage_continueButton")
-
-			//.elementByCss("#LoginPage_version > div")
-			//.sleep(1000)
-			//.click()
-			//.tap()
+			.contexts()
+			.then(function (ctxs) {
+				return driver.context(ctxs[ctxs.length - 1]);
+			})
+			.sleep(1000)
+			.elementByCss("#LoginPage_continueButton > .x-button-label")
+			.tap()
 			.sleep(5000);
 	});
 });
