@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/appium/sample-code",
   "scripts": {
-    "android-webview": "mocha android-webview.js"
+    "android-webview": "mocha test-webview.js",
+	"android-bpm": "mocha test-bpm.js"
   },
   "dependencies": {
     "selenium-webdriver": "^3.0.0-beta-3",

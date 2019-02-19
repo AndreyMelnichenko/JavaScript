@@ -13,5 +13,6 @@ exports.android19 = {
   platformName: 'Android',
   platformVersion: '7.1',
   deviceName: 'Android Emulator',
+  autoGrantPermissions: true,
   app: undefined // will be set later
 };
