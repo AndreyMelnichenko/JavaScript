@@ -13,5 +13,3 @@ function sysSeparator (){
 module.exports = function appPath(appName){
     return currentPath + sysSeparator() + appName;
 }
-
-//module.exports.appPath = appPath;
