@@ -5,6 +5,7 @@ require("./helpers/setup");
 var wd = require("wd"),
     _ = require('underscore'),
     serverConfigs = require('./helpers/appium-servers');
+var appPath = require('./platform.js');
 
 describe("android webview", function () {
   this.timeout(300000);
@@ -17,7 +18,7 @@ describe("android webview", function () {
     require("./helpers/logging").configure(driver);
 
     var desired = _.clone(require("./helpers/caps").android19);
-    desired.app = "C:\\protractor\\sample-code\\apps\\test-app.apk";
+    desired.app = appPath("apps/test-app.apk");
 
     return driver
       .init(desired)
