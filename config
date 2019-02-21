@@ -1,3 +1,6 @@
-name=Andrey
-pass=123456
-date=22.11.55
+server.adress=testServer
+bad.name=1q2w3e4r
+bad.pass=!@$##%#
+user.name=Supervisor
+user.pass=Supervisor
+
